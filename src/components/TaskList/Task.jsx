@@ -1,8 +1,8 @@
-// import { getCurrentDateTime } from '../utils/utils'
+// import { getCurrentDateTime } from '../../utils'
 import { useState } from 'react'
-import AutoSizingTextarea from '../AutoSizingTextarea/AutoSizingTextarea'
+import { AutoSizingTextarea } from '../AutoSizingTextarea';
 
-const TaskCard = ({ status, color, deadline, title, content, done, onDoneToggle, onDeadlineChange, onTitleChange, onContentChange, onTaskDelete,}) => {
+const Task = ({ status, color, deadline, title, content, done, onDoneToggle, onDeadlineChange, onTitleChange, onContentChange, onTaskDelete,}) => {
     const [inFocus, setInFocus] = useState(false)
 
     const toggleDone = event => {
@@ -93,4 +93,4 @@ const TaskCard = ({ status, color, deadline, title, content, done, onDoneToggle,
     )
 }
 
-export default TaskCard
+export default Task

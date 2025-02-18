@@ -1,4 +1,4 @@
-import { capitalizeSentence } from "../../utils/utils"
+import { capitalizeSentence } from '../../utils'
 
 const TaskListBar = ({ count, barTitle, color }) => (
     <div className='task-list-bar' style={{ backgroundColor: color }}>

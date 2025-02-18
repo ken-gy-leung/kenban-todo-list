@@ -1,7 +1,7 @@
-// import { getCurrentDateTime } from '../utils/utils'
+// import { getCurrentDateTime } from '../../utils'
 import {useState} from 'react'
-import TaskList from '../TaskList/TaskList'
-import AddOrSearchCard from './AddOrSearchCard/AddOrSearchCard'
+import { TaskList } from '../TaskList';
+import AddOrSearchCard from './AddOrSearchCard'
 
 const AddOrSearchWidget = ({ taskCount, color, onTaskAdd, onTaskSearch }) => {
   const [action, setAction] = useState('Add')

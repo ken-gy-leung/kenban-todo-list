@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import './App.css'
 import './kenban.css'
-import TaskCard from './components/TaskCard/TaskCard'
-import AddOrSearchWidget from './components/AddOrSearchWidget/AddOrSearchWidget'
-import TaskList from './components/TaskList/TaskList'
-import { getCurrentDateTime } from './utils/utils'
+// import Task from './components/Task/Task'
+// import AddOrSearchWidget from './components/AddOrSearchWidget/AddOrSearchWidget'
+// import TaskList from './components/TaskList/TaskList'
+import { Task, AddOrSearchWidget, TaskList} from './components'
+import { getCurrentDateTime } from './utils'
 import { v4  } from 'uuid'
 
 const App = () => {
@@ -119,9 +120,9 @@ const App = () => {
     completed: { tasks: completedTasks, color: '#94A3B8' }
   }
   
-  // create TaskCard components for tasks
-  const createTaskCards = tasks => tasks.map(task =>
-    <TaskCard
+  // create Task components for tasks
+  const createTasks = tasks => tasks.map(task =>
+    <Task
       key={task.id}
       status={getTaskStatus(task)}
       color={taskListsByStatus[getTaskStatus(task)]['color']}
@@ -154,7 +155,7 @@ const App = () => {
             {`--- No ${status} task ---`}
           </div>
           :
-          createTaskCards(tasks)
+          createTasks(tasks)
         }
       </TaskList>
     )

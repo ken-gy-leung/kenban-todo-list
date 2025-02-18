@@ -1,4 +1,4 @@
-import TaskListBar from "../TaskListBar/TaskListBar"
+import TaskListBar from "./TaskListBar"
 
 const TaskList = ({ listClasses, barTitle, taskCount, color, children }) => (
     <div key={barTitle} className={listClasses} style={{ backgroundColor: `${color}11` }}>
