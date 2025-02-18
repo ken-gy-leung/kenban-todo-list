@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import './AutoSizingTextarea.css'
 
 const AutoSizingTextarea = ({ className, name, value, holderText, titleHint, onValueChange, onTaskFocus, onTaskBlur, onEnterDown }) => {
     const textareaRef = useRef(null)

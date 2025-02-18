@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import AutoSizingTextarea from '../../AutoSizingTextarea/AutoSizingTextarea'
 // import { getCurrentDateTime } from '../../../utils/utils'
-import './AddOrSearchCard.css'
 
 const AddOrSearchCard = ({ color, action, deadlineInput, deadlineSearchFrom, deadlineSearchTo, title, content, onActionChange, onDeadlineChange, onDeadlineFromChange, onDeadlineToChange, onTitleChange, onContentChange, onTaskAddByEnter, onTaskSearchByEnter}) => {
     const [inFocus, setInFocus] = useState(false)

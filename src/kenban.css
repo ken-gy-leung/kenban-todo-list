@@ -21,3 +21,248 @@
     font-family: 'Poppins-Regular';
     font-size: 1rem;
 }
+
+/* TaskList */
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 19rem;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 24px;
+    align-items: center;
+}
+
+/* TaskListBar */
+
+.task-list-bar {
+    display: flex;
+    width: 18rem;
+    border-radius: 24px;
+    align-items: center;
+    padding: 0.4rem;
+}
+
+.bar-circle {
+    background-color: white;
+    width: 1.1rem;
+    height: 1rem;
+    font-family: 'Poppins-Regular';
+    font-size: 1.1rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.bar-title {
+    font-family: 'Poppins-Regular';
+    font-weight: bold;
+    color: white;
+    padding-left: 0.5rem;
+}
+
+/* TaskCard */
+
+.task {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E2E8F0;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: white;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, box-shadow;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.task:focus {
+    border: 10px solid red;
+}
+
+.task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.task:active {
+    transform: translateY(0);
+    transition-duration: 50ms;
+}
+
+.task-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f7ff;
+    padding-bottom: 0.3rem;
+}
+
+.task-checkbox {
+    width: fit-content;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+/* remove all built-in styles of task inputs except checkboxes */
+.task input[type='datetime-local'] {
+    all: unset;
+    width: 12rem;
+    border-style: solid;
+    border-color: #E2E8F0;
+    border-width: 0 1px;
+    padding: 0 0.5rem;
+    margin-right: 0.25rem;
+    cursor: pointer;
+    font-family: 'Poppins-ExtraLight';
+    font-weight: lighter;
+    font-size: 1rem;
+    transition: all 0.2s ease, transform 0.1s ease;
+}
+
+.task input[type='datetime-local']:hover {
+    background-color: #d3d3d322;
+    border-radius: 5px;
+}
+
+/* ---styling for icon in default calendar picker --- */
+/* WebKit browsers (Chrome, Safari) */
+.task input[type='datetime-local']::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+/* Firefox */
+.task input[type='datetime-local']::-moz-calendar-picker-indicator {
+    cursor: pointer;
+}
+/* ---styling for icon in default calendar picker --- end */
+
+.task-delete-button {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+}
+
+.task-delete-button:hover {
+    transform: rotate(180deg);
+}
+
+.task-delete-button {
+    transform: rotate(-180deg);
+}
+
+.task-delete-button svg {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.task-title {
+    /* 'all: unset' has to stay with font style settings, 
+        which otherwise would be unset along 
+        with other default styles of textarea */
+    all: unset;
+    font-family: 'Poppins-Regular';
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.task-content {
+    all: unset;
+    font-family: 'Poppins-Regular';
+    font-size: 1rem;
+}
+
+/* AutoSizingTextarea */
+
+.auto-sizing-textarea {
+    padding: 0.5rem 0.3rem 0 0.3rem;
+    resize: none;
+    /* line break styles */
+    overflow: hidden;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    /* line break styles end */
+    min-height: calc(1.5rem + 0.5rem - 2px);
+    line-height: 1.5rem;
+    box-sizing: border-box;
+}
+
+/* AddOrSearchWidget */
+
+.add-or-search-widget{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: fit-content;
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 24px;
+    align-items: center;
+}
+
+.add-or-search-widget .task {
+    width: 32rem;
+}
+
+.add-or-search-widget .task input[type='datetime-local'] {
+    width: 32rem;
+    padding: 0;
+    border-width: 0 1px 1px 1px;
+}
+
+.add-or-search-widget [name='action-select'] {
+    all: unset;
+    width: 32rem;
+    border: 1px solid #E2E8F0;;
+    font-family: 'Poppins-ExtraLight';
+    font-weight: lighter;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.widget-action-buttons {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.widget-action-buttons button {
+    all: unset;
+    border-radius: 24px;
+    font-family: 'Poppins-Regular';
+    font-weight: bold;
+    color: white;
+    width: 8rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.widget-action-buttons [name='action-button'] {
+    background-color: #22c55e;
+}
+
+.widget-action-buttons [name='action-button']:hover {
+    background-color: #22c55e99;
+}
+
+.widget-action-buttons [name='reset-button'] {
+    background-color: #94a3b8;
+}
+
+.widget-action-buttons [name='reset-button']:hover {
+    background-color: #94a3b899;
+}

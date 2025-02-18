@@ -1,6 +1,5 @@
 // import { getCurrentDateTime } from '../utils/utils'
 import { useState } from 'react'
-import './TaskCard.css'
 import AutoSizingTextarea from '../AutoSizingTextarea/AutoSizingTextarea'
 
 const TaskCard = ({ status, color, deadline, title, content, done, onDoneToggle, onDeadlineChange, onTitleChange, onContentChange, onTaskDelete,}) => {

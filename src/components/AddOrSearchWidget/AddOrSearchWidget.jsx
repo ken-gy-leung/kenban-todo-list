@@ -1,6 +1,5 @@
 // import { getCurrentDateTime } from '../utils/utils'
 import {useState} from 'react'
-import './AddOrSearchWidget.css'
 import TaskList from '../TaskList/TaskList'
 import AddOrSearchCard from './AddOrSearchCard/AddOrSearchCard'
 
