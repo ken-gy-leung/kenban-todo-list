@@ -1,59 +1,51 @@
 import { useState } from 'react'
 import './App.css'
 import './kenban.css'
-// import Task from './components/Task/Task'
-// import AddOrSearchWidget from './components/AddOrSearchWidget/AddOrSearchWidget'
-// import TaskList from './components/TaskList/TaskList'
-import { Task, AddOrSearchWidget, TaskList} from './components'
-import { getCurrentDateTime } from './utils'
+import { Task, AddOrSearchWidget, TaskList } from './components';
+import {
+  getLocalTaskStorage,
+  setLocalTaskStorage,
+  getCurrentDateTime,
+} from './utils';
 import { v4  } from 'uuid'
 
 const App = () => {
   // initialize state allTasks with the value from localStorage, or an empty array if there is no value
-  const allLocalTasks = localStorage.getItem('allTasks')
-  const initialTasks = allLocalTasks ? JSON.parse(allLocalTasks) : []
+  const initialTasks = getLocalTaskStorage('allTasks')
   const [allTasks, setAllTasks] = useState(initialTasks)
-
-  const getLocalTaskStorage = () => {
-    return JSON.parse(localStorage.getItem('allTasks'))
-  }
-
-  const setLocalTaskStorage = tasks => {
-    localStorage.setItem('allTasks', JSON.stringify(tasks))
-  }
 
   const handleTaskAdd = (deadline, title, content) => {
     // use v4 from uuid to generate a unique id for each task
     const newTask = { id: v4(), deadline, title, content, done: false }
     setAllTasks([...allTasks, newTask])
     // use localStorage to store the allTasks (after JSON.stringify)
-    setLocalTaskStorage([...allTasks, newTask])
+    setLocalTaskStorage('allTasks', [...allTasks, newTask])
   }
 
   const handleDoneToggle = (id, done) => {
-    const tasks = getLocalTaskStorage()
+    const tasks = getLocalTaskStorage('allTasks')
     const updatedTasks = tasks.map(task=>task.id===id? {...task,done}:task)
     // update localStorage with the updated allTasks
-    setLocalTaskStorage(updatedTasks)
+    setLocalTaskStorage('allTasks', updatedTasks)
 
     const updatedResults = allTasks.map(task=>task.id===id? {...task,done}:task)
     setAllTasks(updatedResults)
   }
 
   const handleDeadlineChange = (id, deadline) => {
-    const tasks = getLocalTaskStorage()
+    const tasks = getLocalTaskStorage('allTasks')
     const updatedTasks = tasks.map(task=>task.id===id? {...task, deadline}:task)
-    setLocalTaskStorage(updatedTasks)
+    setLocalTaskStorage('allTasks', updatedTasks)
 
     const updatedResults = allTasks.map(task => task.id === id ? { ...task, deadline } : task)
     setAllTasks(updatedResults)
   }
 
   const handleTitleChange = (id, title) => {
-    const tasks = getLocalTaskStorage()
+    const tasks = getLocalTaskStorage('allTasks')
     const updatedTasks = tasks.map(task => task.id === id ? { ...task, title } : task)
 
-    setLocalTaskStorage(updatedTasks)
+    setLocalTaskStorage('allTasks', updatedTasks)
 
     const updatedResults = allTasks.map(task => task.id === id ? { ...task, title } : task)
 
@@ -61,10 +53,10 @@ const App = () => {
   }
 
   const handleContentChange = (id, content) => {
-    const tasks = getLocalTaskStorage()
+    const tasks = getLocalTaskStorage('allTasks')
     const updatedTasks = tasks.map(task => task.id === id ? { ...task, content } : task)
 
-    setLocalTaskStorage(updatedTasks)
+    setLocalTaskStorage('allTasks', updatedTasks)
 
     const updatedResults = allTasks.map(task => task.id === id ? { ...task, content } : task)
 
@@ -72,16 +64,16 @@ const App = () => {
   }
 
   const handleTaskDelete = id =>{
-    const tasks = getLocalTaskStorage()
+    const tasks = getLocalTaskStorage('allTasks')
     const updatedTasks = tasks.filter(task => task.id !== id)
-    setLocalTaskStorage(updatedTasks)
+    setLocalTaskStorage('allTasks', updatedTasks)
 
     const updatedResults = allTasks.filter(task => task.id !== id)
     setAllTasks(updatedResults)
   }
 
   const handleTaskSearch = (deadlineFrom, deadlineTo, titleInput, contentInput) => {
-    const tasks = getLocalTaskStorage()
+    const tasks = getLocalTaskStorage('allTasks')
     // return all tasks if no search criteria is provided
     if ([deadlineFrom, deadlineTo, titleInput, contentInput].every(arg => !arg)) return setAllTasks(tasks)
     const filteredTasks = tasks.filter(task => (

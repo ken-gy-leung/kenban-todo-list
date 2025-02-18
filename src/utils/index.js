@@ -1,1 +1,1 @@
-export { getCurrentDateTime, capitalizeSentence } from './utils'
+export { getLocalTaskStorage, setLocalTaskStorage, getCurrentDateTime, capitalizeSentence } from './utils'

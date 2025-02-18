@@ -1,3 +1,14 @@
+// get tasks array from local storage
+export const getLocalTaskStorage = key => {
+    const allLocalTasks = localStorage.getItem(key)
+    return allLocalTasks ? JSON.parse(allLocalTasks) : []
+}
+
+// store tasks array as string in local storage
+export const setLocalTaskStorage = (key, value) => {
+    localStorage.setItem(key, JSON.stringify(value))
+}
+
 // return current date and time as a string in the format 'yyyy-mm-ddThh:mm'
 export const getCurrentDateTime = () => {
     const now = new Date()
