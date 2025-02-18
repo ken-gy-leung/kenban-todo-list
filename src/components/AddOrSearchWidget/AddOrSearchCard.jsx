@@ -57,7 +57,13 @@ const AddOrSearchCard = ({ color, action, deadlineInput, deadlineSearchFrom, dea
                 backgroundColor: inFocus ? `${color}20` : 'white'
             }}
         >
-            <select name='action-select' value={action} onChange={changeAction}>
+            <select 
+                name='action-select' 
+                value={action} 
+                style={{color}}
+                title='Select Add or Search Task'
+                onChange={changeAction}
+            >
                 <option value='Add'>Add</option>
                 <option value='Search'>Search</option>
             </select>
@@ -70,6 +76,7 @@ const AddOrSearchCard = ({ color, action, deadlineInput, deadlineSearchFrom, dea
                             // min={getCurrentDateTime()}
                             value={deadlineInput}
                             data-placeholder='Pick a Deadline'
+                            title='Pick a Deadline'
                             onChange={changeDeadline}
                             onFocus={highlightTaskInFocus}
                             onBlur={unhighlightTaskOutFocus}
@@ -79,6 +86,7 @@ const AddOrSearchCard = ({ color, action, deadlineInput, deadlineSearchFrom, dea
                                 type='datetime-local'
                                 value={deadlineSearchFrom}
                                 data-placeholder='From'
+                                title='Search From This Date'
                                 max={deadlineSearchTo}
                                 onChange={changeDeadlineFrom}
                                 onFocus={highlightTaskInFocus}
@@ -88,6 +96,7 @@ const AddOrSearchCard = ({ color, action, deadlineInput, deadlineSearchFrom, dea
                                 type='datetime-local'
                                 value={deadlineSearchTo}
                                 data-placeholder='To'
+                                title='Search To This Date'
                                 min={deadlineSearchFrom}
                                 onChange={changeDeadlineTo}
                                 onFocus={highlightTaskInFocus}
