@@ -243,12 +243,10 @@
 
 .add-or-search-widget .auto-sizing-textarea {
     width: 20.125rem;
-    height: 2rem;
     border-width: 0 1px 1px 1px;
     border-style: solid;
     border-color: #E2E8F0;
     text-align: center;
-    padding: 0.3rem;
     transition: all 0.2s ease, transform 0.1s ease;
 }
 
