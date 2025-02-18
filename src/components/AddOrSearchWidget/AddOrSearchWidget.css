@@ -1,0 +1,65 @@
+.add-or-search-widget{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: fit-content;
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 24px;
+    align-items: center;
+}
+
+.add-or-search-widget .task {
+    width: 32rem;
+}
+
+.add-or-search-widget .task input[type='datetime-local'] {
+    width: 32rem;
+    padding: 0;
+    border-width: 0 1px 1px 1px;
+}
+
+.add-or-search-widget [name='action-select'] {
+    all: unset;
+    width: 32rem;
+    border: 1px solid #E2E8F0;;
+    font-family: 'Poppins-ExtraLight';
+    font-weight: lighter;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.widget-action-buttons {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.widget-action-buttons button {
+    all: unset;
+    border-radius: 24px;
+    font-family: 'Poppins-Regular';
+    font-weight: bold;
+    color: white;
+    width: 8rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.widget-action-buttons [name='action-button'] {
+    background-color: #22c55e;
+}
+
+.widget-action-buttons [name='action-button']:hover {
+    background-color: #22c55e99;
+}
+
+.widget-action-buttons [name='reset-button'] {
+    background-color: #94a3b8;
+}
+
+.widget-action-buttons [name='reset-button']:hover {
+    background-color: #94a3b899;
+}

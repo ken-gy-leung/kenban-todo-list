@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-ExtraLight';
+    src: url('assets/fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.task-lists {
+    display: flex;
+    gap: 2rem;
+}
+
+.no-task-alt {
+    font-family: 'Poppins-Regular';
+    font-size: 1rem;
+}

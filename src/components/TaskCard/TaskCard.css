@@ -1,0 +1,116 @@
+.task {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E2E8F0;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: white;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, box-shadow;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.task:focus {
+    border: 10px solid red;
+}
+
+.task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.task:active {
+    transform: translateY(0);
+    transition-duration: 50ms;
+}
+
+.task-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f7ff;
+    padding-bottom: 0.3rem;
+}
+
+.task-checkbox {
+    width: fit-content;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+/* remove all built-in styles of task inputs except checkboxes */
+.task input[type='datetime-local'] {
+    all: unset;
+    width: 12rem;
+    border-style: solid;
+    border-color: #E2E8F0;
+    border-width: 0 1px;
+    padding: 0 0.5rem;
+    margin-right: 0.25rem;
+    cursor: pointer;
+    font-family: 'Poppins-ExtraLight';
+    font-weight: lighter;
+    font-size: 1rem;
+    transition: all 0.2s ease, transform 0.1s ease;
+}
+
+.task input[type='datetime-local']:hover {
+    background-color: #d3d3d322;
+    border-radius: 5px;
+}
+
+/* ---styling for icon in default calendar picker --- */
+/* WebKit browsers (Chrome, Safari) */
+.task input[type='datetime-local']::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+/* Firefox */
+.task input[type='datetime-local']::-moz-calendar-picker-indicator {
+    cursor: pointer;
+}
+/* ---styling for icon in default calendar picker --- end */
+
+.task-delete-button {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+}
+
+.task-delete-button:hover {
+    transform: rotate(180deg);
+}
+
+*/ .task-delete-button {
+    transform: rotate(-180deg);
+}
+
+.task-delete-button svg {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.task-title {
+    /* 'all: unset' has to stay with font style settings, 
+        which otherwise would be unset along 
+        with other default styles of textarea */
+    all: unset;
+    font-family: 'Poppins-Regular';
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.task-content {
+    all: unset;
+    font-family: 'Poppins-Regular';
+    font-size: 1rem;
+}

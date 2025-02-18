@@ -1,0 +1,12 @@
+.auto-sizing-textarea {
+    padding: 0.5rem 0.3rem 0 0.3rem;
+    resize: none;
+    /* line break styles */
+    overflow: hidden;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    /* line break styles end */
+    min-height: calc(1.5rem + 0.5rem - 2px);
+    line-height: 1.5rem;
+    box-sizing: border-box;
+}
